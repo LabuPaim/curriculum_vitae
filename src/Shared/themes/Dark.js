@@ -7,13 +7,13 @@ export const DarkTheme = createTheme({
             main: '#339DA2',
             dark: '#2A6D7',
             light: '#3CB6C1',
-            contrastText: '#FFFFFF',
+            contrastText: '#ffff',
         },
         secondary:{
             main: '#406374',
             dark: '#000000',
             light: '#4A9AC1',
-            contrastText: '#FFFFFF',
+            contrastText: '#ffff',
         },
         background: {
             default: '#000000',
@@ -22,7 +22,7 @@ export const DarkTheme = createTheme({
     },
     typography: {
         allVariants: {
-            color: '#FFFFFF',
+            color: '#ffff',
         }
     }
 });
