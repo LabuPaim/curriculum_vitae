@@ -1,2 +1,2 @@
-export * from './dashboard/DashBoards'
-export * from './listCandidatos/ListCandidatos'
+export * from './dashList/DashList'
+export * from './contato/Contato'

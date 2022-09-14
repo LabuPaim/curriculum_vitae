@@ -35,7 +35,7 @@ export const MenuLateral = ({children}) => {
   
 
   return (
-    <>
+    <Box>
       <Drawer
       anchor="left"
       open={drawerOpen} 
@@ -48,7 +48,7 @@ export const MenuLateral = ({children}) => {
             <List component='nav'>
               {
                 drawerOptions.map(options =>(
-                  <ListItemButton href={options.path}>
+                  <ListItemButton href={options.path} key={options.path}>
                     <ListItemIcon>
                       <options.icons/>
                     </ListItemIcon>
@@ -84,6 +84,6 @@ export const MenuLateral = ({children}) => {
       </Box>
 
 
-    </>
+    </Box>
   );
 }
