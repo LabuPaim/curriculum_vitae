@@ -48,7 +48,7 @@ export const MenuLateral = ({children}) => {
             <List component='nav'>
               {
                 drawerOptions.map(options =>(
-                  <ListItemButton >
+                  <ListItemButton href={options.path}>
                     <ListItemIcon>
                       <options.icons/>
                     </ListItemIcon>
