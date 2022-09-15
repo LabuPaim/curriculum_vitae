@@ -1,9 +1,31 @@
-import { Box } from "@mui/material"
+import { Box, Button } from "@mui/material"
+import { useEffect, useState } from "react";
 import { Cards } from '../../Shared/components/card/Card';
+import { IsModal } from "../../Shared/components/modal/Modal";
+import api from "../../Shared/services/api/api";
 
 
 export const DashBoards = () => {
-  return (    
+
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!isOpen);
+
+  const [stateCandidato, setStateCandidato] = useState([]);
+  const [uniqueCandidato, setUniqueCandidato] = useState({});
+
+  useEffect(() => {
+    api
+    .get("/candidato")
+    .then((response) => {
+      setStateCandidato(response.data)
+    })
+    .catch((err) => {
+      console.error("ops! ocorreu um erro" + err);
+    });
+  },[]) 
+
+  return (
+    <>
     <Box 
     display='flex' 
     flexDirection="row" 
@@ -12,9 +34,28 @@ export const DashBoards = () => {
     width={"90%"}
     paddingTop={2}
     justifyContent={'center'}
+    onClick={()=>{isOpen && setOpen(false)}}
     >
-      <Cards/>
+      {stateCandidato.map(item =>{
+        return (
+          <Button onClick={()=>{
+            setUniqueCandidato(item);
+            handleOpen()
+          }}>
+            <Cards
+            foto={item.foto}
+            nome={item.nome}
+            stack={item.stack}
+            />
+          </Button>
+        )      
+      })}
     </Box>
-    
+    <IsModal
+    open={isOpen}
+    onRequestClose={handleOpen}
+    props={uniqueCandidato}
+    />
+    </>
   );
 }

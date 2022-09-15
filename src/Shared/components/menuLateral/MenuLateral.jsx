@@ -1,18 +1,16 @@
-import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText, Tooltip } from "@mui/material";
-import { AiFillHome, AiFillContacts, AiOutlineMenu } from "react-icons/ai"
+import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { AiFillHome, AiFillContacts } from "react-icons/ai"
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
 import { Header } from "../header/Header";
-// import { ListItemLink } from "./List";
 
 
 
 export const MenuLateral = ({children}) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-
   
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawerOpen =() => {
@@ -31,10 +29,8 @@ export const MenuLateral = ({children}) => {
       path: '/contato',
       icons: AiFillContacts,
       label: 'Contato',
-    },
-    
-  ]
-  
+    },    
+  ]  
 
   return (
     <Box>
@@ -74,7 +70,6 @@ export const MenuLateral = ({children}) => {
                 <ListItemText primary='Alternar tema' />                  
               </ListItemButton>  
             </List>
-
           </Box>
           
         </Box>
@@ -87,9 +82,7 @@ export const MenuLateral = ({children}) => {
       }      
       <Box marginLeft={smDown ? theme.spacing(4) : theme.spacing(28)}>
       {children}
-
       </Box>
-
     </Box>
   );
 }
