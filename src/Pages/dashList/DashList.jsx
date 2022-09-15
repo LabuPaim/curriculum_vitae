@@ -7,7 +7,8 @@ export const DashBoards = () => {
     <Box 
     display='flex' 
     flexDirection="row" 
-    gap={4} 
+    flexWrap={'wrap'}
+    gap={4}
     width={"90%"}
     paddingTop={2}
     justifyContent={'center'}

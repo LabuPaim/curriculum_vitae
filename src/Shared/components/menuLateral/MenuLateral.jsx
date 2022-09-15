@@ -1,9 +1,10 @@
-import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { AiFillHome, AiFillContacts } from "react-icons/ai"
+import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText, Tooltip } from "@mui/material";
+import { AiFillHome, AiFillContacts, AiOutlineMenu } from "react-icons/ai"
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { useAppThemeContext } from "../../contexts";
+import { Header } from "../header/Header";
 // import { ListItemLink } from "./List";
 
 
@@ -15,7 +16,7 @@ export const MenuLateral = ({children}) => {
   
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawerOpen =() => {
-    setDrawerOpen(true)
+    setDrawerOpen(!drawerOpen)
   }
 
   const {toggleTheme, themeName } = useAppThemeContext()
@@ -31,6 +32,7 @@ export const MenuLateral = ({children}) => {
       icons: AiFillContacts,
       label: 'Contato',
     },
+    
   ]
   
 
@@ -54,9 +56,8 @@ export const MenuLateral = ({children}) => {
                     </ListItemIcon>
                     <ListItemText primary={options.label} />
                   </ListItemButton>
-                  
-
-              ))}
+                ))
+              }
               
             </List>
           </Box>
@@ -78,11 +79,16 @@ export const MenuLateral = ({children}) => {
           
         </Box>
       </Drawer>
-      <Box marginLeft={smDown ? theme.spacing(2) : theme.spacing(28)}>
+      {smDown &&
+      <Box onClick={smDown &&  toggleDrawerOpen}>
+        <Header/>
+      </Box>
+      
+      }      
+      <Box marginLeft={smDown ? theme.spacing(4) : theme.spacing(28)}>
       {children}
 
       </Box>
-
 
     </Box>
   );

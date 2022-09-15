@@ -1,33 +1,48 @@
 import api from '../../services/api/api'
-import { Card, CardActions, CardContent, CardMedia, Collapse, Typography } from "@mui/material"
+import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material"
 import { useEffect, useState } from 'react';
-import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+// import { styled } from '@mui/material/styles';
+// import { red } from '@mui/material/colors';
+// import IconButton from '@mui/material/IconButton';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import ShareIcon from '@mui/icons-material/Share';
 
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+// const ExpandMore = styled((props) => {
+//   const { expand, ...other } = props;
+//   return <IconButton {...other} />;
+// })(({ theme, expand }) => ({
+//   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+//   marginLeft: 'auto',
+//   transition: theme.transitions.create('transform', {
+//     duration: theme.transitions.duration.shortest,
+//   }),
+// }));
 
 
 export const Cards = () => {
 
   const [stateCandidato, setStateCandidato] = useState([]);
-  const [expanded, setExpanded] = useState(false);
+  // const [expanded, setExpanded] = useState(false);
+  // const [isFavorite, setIsFavorite] = useState('secondary');
+  // const [isShare, setIsShare] = useState('secondary');
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  // const handleExpandClick = () => {
+  //   setExpanded(!expanded);
+  // };
+
+  // const isFavoriteClick = () => {
+  //   isFavorite === 'secondary' ?
+  //   setIsFavorite('favorite'):
+  //   setIsFavorite('secondary')    
+  // };
+
+  // const isShareClick = () => {
+  //   isShare === 'secondary' ?
+  //   setIsShare('share'):
+  //   setIsShare('secondary')    
+  // };
   
   useEffect(() => {
     api
@@ -45,7 +60,7 @@ export const Cards = () => {
     <>
     {stateCandidato.map(item =>{
       return (
-        <Card sx={{ maxWidth: 300 }}>
+        <Card sx={{ maxWidth: 350 }}>
           <CardMedia
           component="img"
           height={'auto'}
@@ -54,7 +69,7 @@ export const Cards = () => {
           />
           <CardContent>
             <Typography gutterBottom variant="h3" component="div" fontSize={22}>
-            {item?.nome}, {item?.idade}
+            {item?.nome}
             </Typography>
 
             <Typography gutterBottom variant="h1" component="div" fontSize={18}>
@@ -66,14 +81,56 @@ export const Cards = () => {
               <></>
             }
             </Typography>
-            <CardActions disableSpacing>
+            
+            <Typography gutterBottom variant="h2" component="div" fontSize={16}>
+            {
+              item?.conhecimento.length === 1 ? item.conhecimento:
+              item?.conhecimento.length === 2 ? `${item.conhecimento[0]}, ${item.conhecimento[1]}` :
+              item?.conhecimento.length === 3 ? `${item.conhecimento[0]}, ${item.conhecimento[1]}, ${item.conhecimento[2]}` :
+              item?.conhecimento.length === 4 ? `${item.conhecimento[0]}, ${item.conhecimento[1]}, ${item.conhecimento[2]}, ${item.conhecimento[3]}` :
+              <></>
+            }
+            </Typography>
+
+            <Typography gutterBottom variant="h3" component="div" fontSize={20}>
+            {item?.educacao}
+            </Typography>
+
+            <Typography gutterBottom variant="h3" component="div" fontSize={20}>
+            {item?.profissional}
+            </Typography>
+
+            <Box sx={{display: 'flex', flexDirection: 'column', gap: 1}}>
+
+              <Typography
+              sx={{
+                variant: 'h3',
+                component: 'div',
+                fontWeight: 'bold',
+                fontSize: 13
+              }}>
+                Descrição:
+              </Typography>
+              <Typography sx={{variant: 'h3', component: 'div', fontSize: 11}}>
+                {item?.descricao}
+              </Typography>
+
+            </Box>
+
+
+            {/* <CardActions disableSpacing>
               <IconButton 
               aria-label="add to favorites"
-              color="primary"
+              onClick={isFavoriteClick}
+              color={isFavorite}
               >
                 <FavoriteIcon/>
               </IconButton>
-              <IconButton aria-label="share">
+              <IconButton 
+              aria-label="share"
+              onClick={isShareClick}
+              color={isShare}
+              >
                 <ShareIcon/>
               </IconButton>
               <ExpandMore
@@ -84,9 +141,9 @@ export const Cards = () => {
               >
                 <ExpandMoreIcon />
               </ExpandMore>
-            </CardActions>
+            </CardActions> */}
 
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph>Method:</Typography>
                 <Typography paragraph>
@@ -114,7 +171,7 @@ export const Cards = () => {
                   Set aside off of the heat to let rest for 10 minutes, and then serve.
                 </Typography>
               </CardContent>
-            </Collapse>
+            </Collapse> */}
           </CardContent>          
         </Card>
       )
