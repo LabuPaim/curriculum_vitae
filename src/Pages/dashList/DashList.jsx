@@ -5,7 +5,7 @@ import { IsModal } from "../../Shared/components/modal/Modal";
 import api from "../../Shared/services/api/api";
 
 
-export const DashBoards = () => {
+export const DashList = () => {
 
   const [isOpen, setOpen] = useState(false);
   const handleOpen = () => setOpen(!isOpen);

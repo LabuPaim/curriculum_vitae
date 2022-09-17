@@ -1,5 +1,5 @@
 import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { AiFillHome, AiFillContacts } from "react-icons/ai"
+import { AiFillHome, AiFillContacts, AiOutlineUserAdd } from "react-icons/ai"
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import { Box } from "@mui/system";
 import { useState } from "react";
@@ -26,10 +26,15 @@ export const MenuLateral = ({children}) => {
       label: 'Página Inicial',
     },
     {
+      path: '/create',
+      icons: AiOutlineUserAdd,
+      label: 'Adicionar',
+    },  
+    {
       path: '/contato',
       icons: AiFillContacts,
       label: 'Contato',
-    },    
+    },
   ]  
 
   return (
@@ -47,8 +52,8 @@ export const MenuLateral = ({children}) => {
               {
                 drawerOptions.map(options =>(
                   <ListItemButton href={options.path} key={options.path}>
-                    <ListItemIcon>
-                      <options.icons/>
+                    <ListItemIcon sx={{fontSize: 25}}>
+                      <options.icons />
                     </ListItemIcon>
                     <ListItemText primary={options.label} />
                   </ListItemButton>
@@ -61,7 +66,7 @@ export const MenuLateral = ({children}) => {
           <Box>
             <List component='nav'>
               <ListItemButton onClick={toggleTheme}>
-                <ListItemIcon>
+                <ListItemIcon sx={{fontSize: 25}}>
                   {themeName === 'light' ?
                   <MdLightMode/>:
                   <MdNightlight/>}
