@@ -4,14 +4,14 @@ import { LightTheme, DarkTheme } from "../themes";
 import { Box } from "@mui/system";
 
 
-const ThemeContext = createContext({themeName: 'light', toggleTheme: ()=>{}});
+const ThemeContext = createContext({themeName: 'dark', toggleTheme: ()=>{}});
 
 export const useAppThemeContext = () => {
     return useContext(ThemeContext)
 }
 
 export const AppThemeProvider = ({children}) => {
-    const [themeName, setThemeName] = useState('light');
+    const [themeName, setThemeName] = useState('dark');
     const toggleTheme = useCallback(() => {
         setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark': 'light')
     },[])

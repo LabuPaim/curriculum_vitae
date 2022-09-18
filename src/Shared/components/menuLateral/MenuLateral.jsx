@@ -1,5 +1,5 @@
 import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { AiFillHome, AiFillContacts, AiOutlineUserAdd } from "react-icons/ai"
+import { AiFillHome, AiFillContacts, AiOutlineUserAdd, AiOutlineInfoCircle, AiOutlineHome } from "react-icons/ai"
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import { Box } from "@mui/system";
 import { useState } from "react";
@@ -22,7 +22,7 @@ export const MenuLateral = ({children}) => {
   const drawerOptions =[
     {
       path: '/',
-      icons: AiFillHome,
+      icons: AiOutlineHome,
       label: 'Página Inicial',
     },
     {
@@ -32,7 +32,7 @@ export const MenuLateral = ({children}) => {
     },  
     {
       path: '/sobre',
-      icons: AiFillContacts,
+      icons: AiOutlineInfoCircle,
       label: 'Sobre',
     },
   ]  

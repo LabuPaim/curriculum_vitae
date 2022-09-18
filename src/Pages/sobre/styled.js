@@ -1,6 +1,5 @@
 // import {  grey } from '@mui/material/colors';
 
-
 export const layout = {
   display: "flex",
   flexDirection: "row",
@@ -12,14 +11,19 @@ export const layout = {
 export const backgroundStyle80 = {
   display: "flex",
   height: "100%",
-  width: "80%",
+  width: "100%",
   background: "white",
 };
 
 export const backgroundStyle20 = {
+  display: "flex",
+  position: "fixed",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
+  right: "0%",
   height: "100%",
-  width: "20%",
-  background: '#141414',
+  width: 300,
+  background: "#141414",
 };
 
 export const principal = {
@@ -33,6 +37,7 @@ export const principal = {
   height: 600,
   width: 1347,
   gap: 100,
+  zIndex: 100,
 };
 
 export const imagem = {
@@ -40,7 +45,7 @@ export const imagem = {
   width: 2900,
 };
 
-export const boxContato = {
+export const boxSobre = {
   display: "flex",
   flexDirection: "column",
 };
@@ -55,13 +60,17 @@ export const sobre = {
 
 export const typographyRow = {
   color: "black",
-  display: "flex",
-  flexDirection: "row",
-  textAlign:"justify",
-  gap: 6,
+  textAlign: "justify",
 };
 
 export const typographyBold = {
   color: "black",
   fontWeight: "bold",
+};
+
+export const listIcon = {
+  display: "flex",
+  color: "white",
+  flexDirection: "row",
+  fontSize: 50,  
 };
