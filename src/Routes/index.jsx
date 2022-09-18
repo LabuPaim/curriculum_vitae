@@ -1,5 +1,5 @@
 
-import { DashList, ListCandidatos, AddCurriculum } from '../Pages'
+import { DashList, AddCurriculum, Sobre } from '../Pages'
 import { Routes, Route} from 'react-router-dom'
 
 export const AppRoutes = () => {
@@ -7,7 +7,7 @@ export const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<DashList/>} />
             <Route path="/create" element={<AddCurriculum/>} />
-            <Route path="/contato" element={<ListCandidatos/>} />
+            <Route path="/sobre" element={<Sobre/>} />
         </Routes>
     )
 }

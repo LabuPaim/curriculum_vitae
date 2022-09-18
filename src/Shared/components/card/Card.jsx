@@ -12,14 +12,14 @@ export const Cards = ({ foto, nome, stack }) => {
       alt={`Foto de ${nome}`}
       />
       <CardContent
-      sx={{
+      style={{
         display: "flex",
         alignItems: 'flex-start',
         flexDirection: 'column',
         gap: 1,
       }}>
         <Typography
-        sx={{
+        style={{
           variant: "h3",
           component: "div",
           fontSize: 24,
@@ -29,7 +29,7 @@ export const Cards = ({ foto, nome, stack }) => {
         </Typography>
 
         <Typography 
-        sx={{
+        style={{
           variant: "h1",
           component: "div",
           fontSize: 20,

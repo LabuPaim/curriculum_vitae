@@ -31,9 +31,9 @@ export const MenuLateral = ({children}) => {
       label: 'Adicionar',
     },  
     {
-      path: '/contato',
+      path: '/sobre',
       icons: AiFillContacts,
-      label: 'Contato',
+      label: 'Sobre',
     },
   ]  
 

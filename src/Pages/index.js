@@ -1,3 +1,3 @@
 export * from './dashList/DashList'
-export * from './contato/Contato'
+export * from './sobre/Sobre'
 export * from './addCurriculum/Adicionar'
