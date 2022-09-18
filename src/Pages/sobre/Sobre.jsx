@@ -1,6 +1,6 @@
 import { Box, CardMedia, List, ListItemButton, ListItemIcon, Typography } from "@mui/material";
 import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from "react-icons/ai";
-import { layout, backgroundStyle80, backgroundStyle20, principal, imagem, sobre, boxSobre, listIcon, typographyRow } from "./styled";
+import { layout, backgroundStyle80, backgroundStyle20, principal, imagem, sobre, boxSobre, listIcon, typographyRow, boxSobreText } from "./styled";
 
 export const Sobre = () => {
 
@@ -28,6 +28,8 @@ export const Sobre = () => {
         <Box style={principal}>
 
           <Box style={boxSobre}>
+            <Box style={boxSobreText}>
+
             <Typography style={sobre}>
               Sobre
             </Typography>
@@ -35,8 +37,15 @@ export const Sobre = () => {
               Olá me chamo Victor Paim e fiz este projeto para o módulo 4 do curso de <strong>FullStack da BlueEdTech</strong>. Um site de ToDo List consumindo API própria feito com <strong>NestJs, TypeScript,</strong> documentação com <strong>Swagger</strong> e dependências no <strong>MongoDB Atlas</strong>.
               Já no FrontEnd foi utilizado <strong>Axios, ReactJs, Material Ui, Theme Context e Styled Components.</strong>
             </Typography>
+            </Box>
           </Box>
-          <CardMedia component="img" style={imagem} image={'https://avatars.githubusercontent.com/u/91322495?v=4'}/>
+          <CardMedia 
+          component="img" 
+          style={imagem} 
+          // src={'../public/fotos/labuPaim-SemFundo.svg'}
+          image="./labuPaimSemFundo.png"
+          
+          />
 
         </Box>
       </Box>

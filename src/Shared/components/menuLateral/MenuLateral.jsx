@@ -1,5 +1,5 @@
 import { Drawer, List, useTheme, useMediaQuery, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
-import { AiFillHome, AiFillContacts, AiOutlineUserAdd, AiOutlineInfoCircle, AiOutlineHome } from "react-icons/ai"
+import { AiOutlineUserAdd, AiOutlineInfoCircle, AiOutlineHome } from "react-icons/ai"
 import { MdLightMode, MdNightlight } from "react-icons/md";
 import { Box } from "@mui/system";
 import { useState } from "react";

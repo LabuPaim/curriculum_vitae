@@ -28,30 +28,51 @@ export const backgroundStyle20 = {
 
 export const principal = {
   display: "flex",
-  position: "fixed",
+  position: "absolute",
   flexDirection: "row",
   justifyContent: "flex-end",
   alignItems: "center",
-  top: "15%",
+  top: "12%",
   right: "0%",
   height: 600,
-  width: 1347,
-  gap: 100,
+  width: '100%',  
   zIndex: 100,
 };
 
 export const imagem = {
-  height: "auto",
-  width: 2900,
+  height: 700,
+  width: 800,
+  borderRadius: '0 0 180px 50px', 
+  zIndex: 1000, 
 };
 
 export const boxSobre = {
   display: "flex",
+  position: "absolute",
+  width: '100%',
+  height: 300,
+  opacity: 0.8,
+  gap: 30,
+  background: "#141414",
+  color: "white",
+  // marginLeft: 100,
+};
+export const boxSobreText = {
+  display: "flex",
   flexDirection: "column",
+  width: '50%',
+  justifyContent: "center",
+  alignContent: "center",
+  alignItems: "center",
+  opacity: 0.8,
+  gap: 30,
+  background: "#141414",
+  color: "white",
+  // marginLeft: 100,
 };
 
 export const sobre = {
-  color: "black",
+  width: "70%",
   variant: "h1",
   component: "div",
   fontSize: 24,
@@ -59,14 +80,11 @@ export const sobre = {
 };
 
 export const typographyRow = {
-  color: "black",
   textAlign: "justify",
+  width: "70%",
 };
 
-export const typographyBold = {
-  color: "black",
-  fontWeight: "bold",
-};
+
 
 export const listIcon = {
   display: "flex",
