@@ -35,7 +35,7 @@ export const Sobre = () => {
             </Typography>
             <Typography style={typographyRow}> 
               Olá me chamo Victor Paim e fiz este projeto para o módulo 4 do curso de <strong>FullStack da BlueEdTech</strong>. Um site de ToDo List consumindo API própria feito com <strong>NestJs, TypeScript,</strong> documentação com <strong>Swagger</strong> e dependências no <strong>MongoDB Atlas</strong>.
-              Já no FrontEnd foi utilizado <strong>Axios, ReactJs, Material Ui, Theme Context e Styled Components.</strong>
+              Já no FrontEnd foi utilizado <strong>Axios, ReactJs, Material Ui, Theme Context e CSS in JS.</strong>
             </Typography>
             </Box>
           </Box>

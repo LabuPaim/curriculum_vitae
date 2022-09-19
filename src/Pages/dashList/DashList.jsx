@@ -28,12 +28,14 @@ export const DashList = () => {
     <>
     <Box 
     display='flex' 
-    flexDirection="row" 
+    flexDirection="row-reverse" 
     flexWrap={'wrap'}
     gap={4}
     width={"90%"}
-    paddingTop={2}
+    minHeight={880}
+    padding={2}
     justifyContent={'center'}
+    alignItems={'flex-start'}
     onClick={()=>{isOpen && setOpen(false)}}
     >
       {stateCandidato.map(item =>{

@@ -35,6 +35,7 @@ export const Cards = ({ foto, nome, stack }) => {
           fontSize: 20,
         }}>
         {
+          stack.length === 0 ? <></> :
           stack.length === 1 ? stack: 
           stack.length === 2 ? `${stack[0]}, ${stack[1]}` :
           stack.length === 3 ? `${stack[0]}, ${stack[1]}, ${stack[2]}` :

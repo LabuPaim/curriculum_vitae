@@ -1,10 +1,11 @@
 
 export const layout = {
+  display: "flex",
   position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  height: 'auto',
+  top: '20%',
+  left: '35%',
+  transform: 'translate(0)',
+  height: 500,
   maxWidth: 650,
 };
 
@@ -15,15 +16,31 @@ export const layoutBox = {
   background: '#820707',
   color: 'white',
   width: '100%',
-  height: '100%',
-  gap: 10,
+  height: 'auto',
+  transform: 'scale(1.1)',
+  padding: 20,
+  border: '5px solid white',
+  borderRadius: 15,
+}
+  
+  
+
+  
+
+
+export const informacaoBox = {
+  display: "flex",
+  flexDirection: "column",
+  width: '100%',
+  marginTop: -10,
+  gap: 15,
+  // zIndex: 100,
 };
 
 export const topX = {
   display: "flex",
   justifyContent: "flex-end",
   color: "yellow",
-  padding: 10,
   width: '100%',
   fontSize: 30,
 };
