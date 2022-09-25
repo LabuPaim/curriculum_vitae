@@ -38,9 +38,10 @@ export const DashList = () => {
           isOpen && setOpen(false);
         }}
       >
-        {stateCandidato.map(item => {
+        {stateCandidato.map((item, index) => {
           return (
             <Button
+              key={index}
               onClick={() => {
                 setUniqueCandidato(item);
                 handleOpen();
@@ -53,7 +54,7 @@ export const DashList = () => {
       </Box>
       <IsModal
         open={isOpen}
-        onRequestClose={handleOpen}
+        requestClose={handleOpen}
         props={uniqueCandidato}
       />
     </>

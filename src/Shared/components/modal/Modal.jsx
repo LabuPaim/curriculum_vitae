@@ -4,17 +4,17 @@ import { layout, layoutBox, topX, informacaoBox } from './styled';
 import { VscChromeClose } from 'react-icons/vsc';
 import api from '../../services/api/api';
 
-export const IsModal = ({ open, onRequestClose, props }) => {
+export const IsModal = ({ open, requestClose, props }) => {
   const handleDelete = id => {
     api.delete(`${id}`);
   };
 
   return (
-    <Modal open={open} onRequestClose={onRequestClose} style={layout}>
+    <Modal open={open} style={layout}>
       <Box style={layoutBox}>
         <Box style={topX}>
           <VscChromeClose
-            onClick={onRequestClose}
+            onClick={requestClose}
             style={{ cursor: 'pointer' }}
           />
         </Box>
@@ -47,15 +47,24 @@ export const IsModal = ({ open, onRequestClose, props }) => {
           <Typography>{props.conhecimento}</Typography>
           <Typography>{props.descricao}</Typography>
         </Box>
-
-        <Button
-          onClick={() => {
-            handleDelete(props._id);
-            onRequestClose();
-          }}
-        >
-          Delete
-        </Button>
+        <Box>
+          <Button
+          // onClick={() => {
+          //   handleDelete(props._id);
+          //   requestClose();
+          // }}
+          >
+            Edite
+          </Button>
+          <Button
+            onClick={() => {
+              handleDelete(props._id);
+              requestClose();
+            }}
+          >
+            Delete
+          </Button>
+        </Box>
       </Box>
     </Modal>
   );
