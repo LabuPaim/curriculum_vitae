@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import { modal, layoutBox, topX, informacaoBox } from './styled';
+import { modal, layoutBox, topX, informacaoBox, Layout } from './styled';
 import { VscChromeClose } from 'react-icons/vsc';
 import api from '../../services/api';
 
@@ -10,8 +10,14 @@ export const IsModal = ({ open, requestClose, props }) => {
   };
 
   return (
-    <Modal open={open} style={modal}>
-      <Box style={layoutBox}>
+    <Modal 
+    open={open} 
+    style={modal}
+    onClick={() => {
+      requestClose();
+    }}
+    >
+      <Layout style={layoutBox}>
         <Box style={topX}>
           <VscChromeClose
             onClick={requestClose}
@@ -59,13 +65,12 @@ export const IsModal = ({ open, requestClose, props }) => {
           <Button
             onClick={() => {
               handleDelete(props._id);
-              requestClose();
             }}
           >
             Delete
           </Button>
         </Box>
-      </Box>
+      </Layout>
     </Modal>
   );
 };

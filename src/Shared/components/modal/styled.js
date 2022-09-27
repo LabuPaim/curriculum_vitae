@@ -3,15 +3,17 @@ import styled from 'styled-components';
 export const modal = {
   display: 'flex',
   position: 'absolute',
-  top: '20%',
-  left: '35%',
-  transform: 'translate(0)',
-  height: 500,
-  maxWidth: 650,
+  justifyContent: 'center',
+  alignItems: 'center',
+  top: 0,
+  left: 0,
+  height: '100%',
+  maxWidth: '100%',
+  background: 'transparent',
 };
 
 export const Layout = styled.article`
-  display: 'flex';
+  /* display: 'flex';
   flex-direction: 'column';
   text-align: 'justify';
   background: '#820707';
@@ -21,7 +23,7 @@ export const Layout = styled.article`
   transform: 'scale(1.1)';
   padding: 20;
   border: '5px solid white';
-  border-radius: 15;
+  border-radius: 15; */
 `;
 
 export const layoutBox = {
@@ -30,9 +32,8 @@ export const layoutBox = {
   textAlign: 'justify',
   background: '#820707',
   color: 'white',
-  width: '100%',
-  height: 'auto',
-  transform: 'scale(1.1)',
+  width: '50%',
+  height: '50%',
   padding: 20,
   border: '5px solid white',
   borderRadius: 15,
