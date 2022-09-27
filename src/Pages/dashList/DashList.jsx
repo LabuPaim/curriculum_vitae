@@ -2,7 +2,7 @@ import { Box, Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Cards } from '../../Shared/components/card/Card';
 import { IsModal } from '../../Shared/components/modal/Modal';
-import api from '../../Shared/services/api/api';
+import api from '../../Shared/services/api';
 
 export const DashList = () => {
   const [isOpen, setOpen] = useState(false);

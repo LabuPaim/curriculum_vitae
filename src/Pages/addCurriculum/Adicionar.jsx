@@ -7,7 +7,7 @@ import {
   formControlRow,
   formControlColumn,
 } from './styled';
-import api from '../../Shared/services/api/api';
+import api from '../../Shared/services/api';
 import { useState } from 'react';
 
 export const AddCurriculum = () => {

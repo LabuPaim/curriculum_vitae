@@ -1,5 +1,5 @@
 
-import { Environment } from "../../environment";
+import { Environment } from "../environment";
 import axios from "axios";
 
 const api = axios.create({
