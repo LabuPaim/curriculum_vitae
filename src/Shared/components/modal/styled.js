@@ -1,5 +1,6 @@
+import styled from "styled-components";
 
-export const layout = {
+export const modal = {
   display: "flex",
   position: 'absolute',
   top: '20%',
