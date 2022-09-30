@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, FormControl, TextField } from '@mui/material';
+import { Avatar, Button, FormControl, TextField } from '@mui/material';
 import {
   layout,
   avatar,
@@ -6,6 +6,9 @@ import {
   boxColumn,
   formControlRow,
   formControlColumn,
+  Layout,
+  Box,
+  BoxColumn,
 } from './styled';
 import api from '../../Shared/services/api';
 import { useState } from 'react';
@@ -56,9 +59,9 @@ export const AddCurriculum = () => {
   };
 
   return (
-    <Box style={layout}>
+    <Layout >
       <form onSubmit={handleSubmit}>
-        <Box style={boxRow}>
+        <Box>
           <Avatar style={avatar} src={userImage} />
           <FormControl fullWidth>
             <TextField
@@ -73,7 +76,7 @@ export const AddCurriculum = () => {
           </FormControl>
         </Box>
 
-        <Box style={boxColumn}>
+        <BoxColumn>
           <FormControl style={formControlRow}>
             <TextField
               style={{ width: '50%' }}
@@ -118,15 +121,15 @@ export const AddCurriculum = () => {
               variant="outlined"
             />
           </FormControl>
-        </Box>
+        </BoxColumn>
 
-        <Box style={boxRow}>
+        <Box>
           <Button type="submit" reset>
             Submit
           </Button>
           <Button type="reset">Limpar</Button>
         </Box>
       </form>
-    </Box>
+    </Layout>
   );
 };

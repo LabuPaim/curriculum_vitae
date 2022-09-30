@@ -34,11 +34,25 @@ export const TopX = styled.div`
     (props.style = {
       display: 'flex',
       justifyContent: 'flex-end',
-      color: 'yellow',
       width: '100%',
-      fontSize: 30,
       paddingBottom: 10,
     })}
+
+  svg {
+    ${props =>
+      (props.style = {
+        fontSize: 35,
+        color: 'yellow',
+        borderRadius: 3,
+      })}
+  }
+  svg:hover {
+    ${props =>
+      (props.style = {
+        color: '#0e2d2f',
+        background: 'yellow',
+      })}
+  }
 `;
 
 export const BoxButtom = styled.div`
@@ -65,6 +79,22 @@ export const BoxButtom = styled.div`
         cursor: 'pointer',
       })}
   }
+  #delete:hover {
+    ${props =>
+      (props.style = {
+        background: '#f31616',
+        color: 'black',
+        border: '2px solid black',
+      })}
+  }
+  #edite:hover {
+    ${props =>
+      (props.style = {
+        background: '#52c3cb',
+        color: 'black',
+        border: '2px solid black',
+      })}
+  }
 `;
 
 export const Buttom = styled.button`
@@ -72,7 +102,6 @@ export const Buttom = styled.button`
     props.children === 'Deletar'
       ? (props.style = {
           background: '#610505',
-          // color: '#82d4d9',
         })
       : (props.style = {
           background: 'transparent',

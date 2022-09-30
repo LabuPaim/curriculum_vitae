@@ -24,10 +24,12 @@ export const IsModal = ({ open, requestClose, props }) => {
     <Modal open={open} style={modal} onClose={requestClose}>
       <Layout>
         <TopX>
-          <VscChromeClose
-            onClick={requestClose}
-            style={{ cursor: 'pointer' }}
-          />
+          <strong>
+            <VscChromeClose
+              onClick={requestClose}
+              style={{ cursor: 'pointer' }}
+            />
+          </strong>
         </TopX>
         <Box>
           <BoxImage src={props.foto} />
@@ -66,6 +68,7 @@ export const IsModal = ({ open, requestClose, props }) => {
         <BoxButtom>
           <Buttom
             key="edite"
+            id="edite"
             // href={'/' + props._id}
             onClick={() => {
               requestClose();
@@ -75,6 +78,7 @@ export const IsModal = ({ open, requestClose, props }) => {
           </Buttom>
           <Buttom
             key="delete"
+            id="delete"
             onClick={() => {
               handleDelete(props._id);
               requestClose();
