@@ -79,18 +79,18 @@ export const BoxButtom = styled.div`
         cursor: 'pointer',
       })}
   }
-  #delete:hover {
-    ${props =>
-      (props.style = {
-        background: '#f31616',
-        color: 'black',
-        border: '2px solid black',
-      })}
-  }
   #edite:hover {
     ${props =>
       (props.style = {
         background: '#52c3cb',
+        color: 'black',
+        border: '2px solid black',
+      })}
+  }
+  #delete:hover {
+    ${props =>
+      (props.style = {
+        background: '#f31616',
         color: 'black',
         border: '2px solid black',
       })}

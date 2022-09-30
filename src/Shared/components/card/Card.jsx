@@ -24,6 +24,7 @@ export const Cards = ({ foto, nome, stack }) => {
           component: "div",
           fontSize: 24,
           fontWeight: 'bold',
+          padding: '0 0 10px 0',
         }}>
         {nome}
         </Typography>
@@ -33,15 +34,9 @@ export const Cards = ({ foto, nome, stack }) => {
           variant: "h1",
           component: "div",
           fontSize: 20,
+          textAlign: 'left',
         }}>
-        {
-          stack.length === 0 ? <></> :
-          stack.length === 1 ? stack: 
-          stack.length === 2 ? `${stack[0]}, ${stack[1]}` :
-          stack.length === 3 ? `${stack[0]}, ${stack[1]}, ${stack[2]}` :
-          stack.length === 4 ? `${stack[0]}, ${stack[1]}, ${stack[2]}, ${stack[3]}` :
-          <></>
-        }
+        {stack?.join(', ')}
         </Typography>
       </CardContent>
     </Card>

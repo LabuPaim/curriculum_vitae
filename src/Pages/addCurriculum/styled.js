@@ -4,12 +4,19 @@ export const Layout = styled.article`
   ${props =>
     (props.style = {
       display: 'flex',
-      flexDirection: 'column',
       justifyContent: 'center',
+    })}
+`;
+export const Form = styled.form`
+  ${props =>
+    (props.style = {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      height: '100vh',
-      width: '80vw',
-      gap: 2,
+      padding: '40px 0 30px 0',
+      minHeight: '100vh',
+      gap: 5,
     })}
 `;
 
@@ -33,8 +40,33 @@ export const Box = styled.div`
   button {
     ${props =>
       (props.style = {
-        width: '40%',
+        width: '30%',
         padding: '15px 0 15px 0',
+        margin: 15,
+        border: '2px solid #52c3cb',
+        color: '#52c3cb',
+        // border: '2px solid black',
+        borderRadius: 8,
+        background: '#31404C',
+        
+      })}
+  }
+  #submit:hover {
+    ${props =>
+      (props.style = {
+        background: '#52c3cb',
+        color: 'black',
+        border: '2px solid black',
+        
+      })}
+  }
+  #reset:hover {
+    ${props =>
+      (props.style = {
+        background: '#f31616',
+        color: 'black',
+        border: '2px solid black',
+        
       })}
   }
 `;
@@ -42,6 +74,7 @@ export const BoxColumn = styled(Box)`
   ${props =>
     (props.style = {
       flexDirection: 'column',
+      
     })}
 `;
 

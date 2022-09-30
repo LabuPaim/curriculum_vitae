@@ -9,6 +9,7 @@ import {
   Layout,
   Box,
   BoxColumn,
+  Form,
 } from './styled';
 import api from '../../Shared/services/api';
 import { useState } from 'react';
@@ -60,7 +61,7 @@ export const AddCurriculum = () => {
 
   return (
     <Layout >
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Box>
           <Avatar style={avatar} src={userImage} />
           <FormControl fullWidth>
@@ -97,19 +98,19 @@ export const AddCurriculum = () => {
           <FormControl fullWidth style={formControlColumn}>
             <TextField label="Stack" name="stack" variant="standard" required />
             <TextField
-              label="Ensino"
+              label="Formação"
               name="ensino"
               variant="standard"
               required
             />
             <TextField
-              label="Profissional"
+              label="Experiência profissional"
               name="profissional"
               variant="standard"
               required
             />
             <TextField
-              label="Conhecimento"
+              label="Área de conhecimento"
               name="conhecimento"
               variant="standard"
               required
@@ -124,12 +125,12 @@ export const AddCurriculum = () => {
         </BoxColumn>
 
         <Box>
-          <Button type="submit" reset>
+          <Button id={"submit"} type="submit" reset>
             Submit
           </Button>
-          <Button type="reset">Limpar</Button>
+          <Button id={"reset"} type="reset">Limpar</Button>
         </Box>
-      </form>
+      </Form>
     </Layout>
   );
 };
