@@ -20,7 +20,7 @@ export const DashList = () => {
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
       });
-  });
+  }, []);
 
   return (
     <>

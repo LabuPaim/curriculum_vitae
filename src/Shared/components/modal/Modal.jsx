@@ -1,6 +1,15 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Modal from '@mui/material/Modal';
-import { modal, layoutBox, topX, informacaoBox, Layout } from './styled';
+import {
+  modal,
+  Layout,
+  BoxButtom,
+  Buttom,
+  TopX,
+  BoxInfo,
+  Box,
+  BoxImage,
+} from './styled';
 import { VscChromeClose } from 'react-icons/vsc';
 import api from '../../services/api';
 
@@ -9,67 +18,71 @@ export const IsModal = ({ open, requestClose, props }) => {
     api.delete(`${id}`);
   };
 
+  const isStack = props.stack;
+
   return (
-    <Modal 
-    open={open} 
-    style={modal}
-    onClick={() => {
-      requestClose();
-    }}
-    >
-      <Layout style={layoutBox}>
-        <Box style={topX}>
+    <Modal open={open} style={modal} onClose={requestClose}>
+      <Layout>
+        <TopX>
           <VscChromeClose
             onClick={requestClose}
             style={{ cursor: 'pointer' }}
           />
-        </Box>
-
-        <Box style={informacaoBox}>
-          <Typography variant="h5" component="h2">
-            {props.nome} {props.idade} anos
-          </Typography>
-
-          <Typography>
-            {props.stack === undefined ||
-            props.stack === null ||
-            props.stack.length === 0 ? (
-              <></>
-            ) : props.stack.length === 1 ? (
-              props.stack
-            ) : props.stack.length === 2 ? (
-              `${props.stack[0]}, ${props.stack[1]}`
-            ) : props.stack.length === 3 ? (
-              `${props.stack[0]}, ${props.stack[1]}, ${props.stack[2]}`
-            ) : props.stack.length === 4 ? (
-              `${props.stack[0]}, ${props.stack[1]}, ${props.stack[2]}, ${props.stack[3]}`
-            ) : (
-              <></>
-            )}
-          </Typography>
-
-          <Typography>{props.educacao}</Typography>
-          <Typography>{props.profissional}</Typography>
-          <Typography>{props.conhecimento}</Typography>
-          <Typography>{props.descricao}</Typography>
-        </Box>
+        </TopX>
         <Box>
-          <Button
-          // onClick={() => {
-          //   handleDelete(props._id);
-          //   requestClose();
-          // }}
-          >
-            Edite
-          </Button>
-          <Button
+          <BoxImage src={props.foto} />
+          <BoxInfo>
+            <Typography variant="h5" component="h2">
+              {props.nome}, {props.idade} anos
+            </Typography>
+            <Typography component="h3">{isStack?.join(', ')}</Typography>
+            <div>
+              <Typography>
+                <strong>Formação:</strong>
+              </Typography>
+              <Typography>{props.educacao}</Typography>
+            </div>
+            <div>
+              <Typography>
+                <strong>Experiência profissional:</strong>
+              </Typography>
+              <Typography>{props.profissional}</Typography>
+            </div>
+            <div>
+              <Typography>
+                <strong>Área de conhecimento:</strong>
+              </Typography>
+              <Typography>{props.conhecimento?.join(', ')}</Typography>
+            </div>
+            <div>
+              <Typography>
+                <strong>Descrição:</strong>
+              </Typography>
+              <Typography>{props.descricao}</Typography>
+            </div>
+          </BoxInfo>
+        </Box>
+
+        <BoxButtom>
+          <Buttom
+            key="edite"
+            // href={'/' + props._id}
             onClick={() => {
-              handleDelete(props._id);
+              requestClose();
             }}
           >
-            Delete
-          </Button>
-        </Box>
+            Editar
+          </Buttom>
+          <Buttom
+            key="delete"
+            onClick={() => {
+              handleDelete(props._id);
+              requestClose();
+            }}
+          >
+            Deletar
+          </Buttom>
+        </BoxButtom>
       </Layout>
     </Modal>
   );
