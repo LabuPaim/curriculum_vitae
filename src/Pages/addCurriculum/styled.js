@@ -5,6 +5,7 @@ export const Layout = styled.article`
     (props.style = {
       display: 'flex',
       justifyContent: 'center',
+      minWidth: '100vw',
     })}
 `;
 export const Form = styled.form`
@@ -14,6 +15,7 @@ export const Form = styled.form`
       flexDirection: 'column',
       justifyContent: 'space-between',
       alignItems: 'center',
+      minWidth: '100%',
       padding: '40px 0 30px 0',
       minHeight: '100vh',
       gap: 5,
@@ -45,10 +47,8 @@ export const Box = styled.div`
         margin: 15,
         border: '2px solid #52c3cb',
         color: '#52c3cb',
-        // border: '2px solid black',
         borderRadius: 8,
         background: '#31404C',
-        
       })}
   }
   #submit:hover {
@@ -57,7 +57,6 @@ export const Box = styled.div`
         background: '#52c3cb',
         color: 'black',
         border: '2px solid black',
-        
       })}
   }
   #reset:hover {
@@ -66,7 +65,6 @@ export const Box = styled.div`
         background: '#f31616',
         color: 'black',
         border: '2px solid black',
-        
       })}
   }
 `;
@@ -74,7 +72,6 @@ export const BoxColumn = styled(Box)`
   ${props =>
     (props.style = {
       flexDirection: 'column',
-      
     })}
 `;
 

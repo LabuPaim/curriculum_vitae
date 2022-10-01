@@ -1,9 +1,13 @@
-import { Avatar, Button, FormControl, TextField } from '@mui/material';
 import {
-  layout,
+  Avatar,
+  Button,
+  FormControl,
+  TextField,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import {
   avatar,
-  boxRow,
-  boxColumn,
   formControlRow,
   formControlColumn,
   Layout,
@@ -15,6 +19,8 @@ import api from '../../Shared/services/api';
 import { useState } from 'react';
 
 export const AddCurriculum = () => {
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
   const [userImage, setUserImage] = useState('');
 
   function handleReset() {
@@ -60,12 +66,13 @@ export const AddCurriculum = () => {
   };
 
   return (
-    <Layout >
-      <Form onSubmit={handleSubmit}>
-        <Box>
-          <Avatar style={avatar} src={userImage} />
+    <Layout theme={smDown}>
+      <Form onSubmit={handleSubmit} theme={smDown}>
+        <Box theme={smDown}>
+          <Avatar style={avatar} src={userImage} theme={smDown} />
           <FormControl fullWidth>
             <TextField
+              theme={smDown}
               label="Link da Foto"
               name="foto"
               variant="standard"
@@ -77,8 +84,8 @@ export const AddCurriculum = () => {
           </FormControl>
         </Box>
 
-        <BoxColumn>
-          <FormControl style={formControlRow}>
+        <BoxColumn theme={smDown}>
+          <FormControl style={formControlRow} theme={smDown}>
             <TextField
               style={{ width: '50%' }}
               label="Nome"
@@ -125,10 +132,12 @@ export const AddCurriculum = () => {
         </BoxColumn>
 
         <Box>
-          <Button id={"submit"} type="submit" reset>
+          <Button id={'submit'} type="submit">
             Submit
           </Button>
-          <Button id={"reset"} type="reset">Limpar</Button>
+          <Button id={'reset'} type="reset">
+            Limpar
+          </Button>
         </Box>
       </Form>
     </Layout>
