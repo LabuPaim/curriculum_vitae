@@ -137,31 +137,31 @@ export const BoxInfo = styled.div`
     })}
 
   h2 {
-    ${props =>
-      (props.style = {
+    
+      
         color: '#82d4d9',
         fontSize: 32,
-      })}
+      
   }
 
   h3 {
-    ${props =>
-      (props.style = {
+    
+      
         color: '#30979c',
         padding: '0 0 20px 0',
         fontSize: 22,
-      })}
+      
   }
   p {
-    ${props =>
-      (props.style = {
+    
+      
         color: '#82d4d9',
-      })}
+      
   }
   strong {
-    ${props =>
-      (props.style = {
+    
+      
         color: '#30979c',
-      })}
+      
   }
 `;
