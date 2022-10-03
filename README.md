@@ -1,70 +1,70 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
+  <img src="public\img\labuPaim-SemFundo.png" width="200" alt="Nest Logo" />
+</p>
 
-In the project directory, you can run:
+<p align="center">
+  
+  <a href="https://www.typescriptlang.org/" target="blank"><img src="public\img\TS.png" width="100" alt="TypeScript Logo"/></a>   
 
-### `npm start`
+</p>    
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Descrição
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Modelo base de Api criada com [Nest](https://github.com/nestjs/nest) um framework com estrutura progressiva do Node.js com TypeScript do lado do servidor eficiente e escalável e documentação feita em Swagger.
 
-### `npm test`
+## Comandos Utilizados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ npm i -g @nestjs/cli
+# Instala o NestJS Globalmente
+```
 
-### `npm run build`
+```bash
+$ nest new back_model-base
+# Criação das dependências do NestJs onde o nome do projeto é "back_model-base"
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Instalação
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+$ yarn
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Executando a aplicação
 
-### `npm run eject`
+```bash
+# development
+$ yarn start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# watch mode
+$ yarn start:dev
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# production mode
+$ yarn start:prod
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Teste
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+# unit tests
+$ yarn test
 
-## Learn More
+# e2e tests
+$ yarn test:e2e
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# test coverage
+$ yarn test:cov
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Suporte
 
-### Code Splitting
+Nest é um projeto de código aberto licenciado pelo MIT. Se quiser acessar a documentação é só  [clicar aqui](https://docs.nestjs.com/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contato
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Author - Victor Paim
+- Linkedin - [@labupaim](https://www.linkedin.com/in/labupaim/)
+- GitHub - [@LabuPaim](https://github.com/LabuPaim)
+- WhatsApp -  +55 (71) 9 8300-6611
