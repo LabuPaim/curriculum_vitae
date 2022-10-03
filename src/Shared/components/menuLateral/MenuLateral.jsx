@@ -20,7 +20,7 @@ import { Header } from '../header/Header';
 
 export const MenuLateral = ({ children }) => {
   const theme = useTheme();
-  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const smDown = useMediaQuery(theme.breakpoints.down('md'));
 
   const [drawerOpen, setDrawerOpen] = useState(false);
   const toggleDrawerOpen = () => {

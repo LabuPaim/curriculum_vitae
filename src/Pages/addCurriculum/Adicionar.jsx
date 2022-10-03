@@ -7,20 +7,21 @@ import {
   useTheme,
 } from '@mui/material';
 import {
-  avatar,
-  formControlRow,
   formControlColumn,
   Layout,
   Box,
   BoxColumn,
   Form,
+  BoxForm,
+  BoxButtom,
+  BoxAvatar,
 } from './styled';
 import api from '../../Shared/services/api';
 import { useState } from 'react';
 
 export const AddCurriculum = () => {
   const theme = useTheme();
-  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const smDown = useMediaQuery(theme.breakpoints.down('md'));
   const [userImage, setUserImage] = useState('');
 
   function handleReset() {
@@ -66,79 +67,86 @@ export const AddCurriculum = () => {
   };
 
   return (
-    <Layout theme={smDown}>
-      <Form onSubmit={handleSubmit} theme={smDown}>
-        <Box theme={smDown}>
-          <Avatar style={avatar} src={userImage} theme={smDown} />
-          <FormControl fullWidth>
-            <TextField
-              theme={smDown}
-              label="Link da Foto"
-              name="foto"
-              variant="standard"
-              onChange={event => {
-                setUserImage(event.target.value);
-              }}
-              required
-            />
-          </FormControl>
-        </Box>
+    <Layout>
+      <Form onSubmit={handleSubmit}>
+        <BoxForm>
+          <BoxAvatar theme={smDown}>
+            <Avatar id={'avatar'} src={userImage} theme={smDown} />
+            <FormControl fullWidth>
+              <TextField
+                theme={smDown}
+                label="Link da Foto"
+                name="foto"
+                variant="standard"
+                onChange={event => {
+                  setUserImage(event.target.value);
+                }}
+                required
+              />
+            </FormControl>
+          </BoxAvatar>
 
-        <BoxColumn theme={smDown}>
-          <FormControl style={formControlRow} theme={smDown}>
-            <TextField
-              style={{ width: '50%' }}
-              label="Nome"
-              name="name"
-              variant="standard"
-              required
-            />
-            <TextField
-              style={{ width: '50%' }}
-              label="Idade"
-              name="idade"
-              variant="standard"
-              required
-            />
-          </FormControl>
+          <BoxColumn theme={smDown}>
+            <FormControl className={'formControlRow'} theme={smDown}>
+              <TextField
+                className={'controlRow'}
+                label="Nome"
+                name="name"
+                variant="standard"
+                required
+              />
+              <TextField
+                className={'controlRow'}
+                label="Idade"
+                name="idade"
+                variant="standard"
+                required
+              />
+            </FormControl>
 
-          <FormControl fullWidth style={formControlColumn}>
-            <TextField label="Stack" name="stack" variant="standard" required />
-            <TextField
-              label="Formação"
-              name="ensino"
-              variant="standard"
-              required
-            />
-            <TextField
-              label="Experiência profissional"
-              name="profissional"
-              variant="standard"
-              required
-            />
-            <TextField
-              label="Área de conhecimento"
-              name="conhecimento"
-              variant="standard"
-              required
-            />
-            <TextField
-              label="Descrição"
-              name="descricao"
-              multiline
-              variant="outlined"
-            />
-          </FormControl>
-        </BoxColumn>
+            <FormControl fullWidth style={formControlColumn}>
+              <TextField
+                label="Stack"
+                name="stack"
+                variant="standard"
+                required
+              />
+              <TextField
+                label="Formação"
+                name="ensino"
+                variant="standard"
+                required
+              />
+              <TextField
+                label="Experiência profissional"
+                name="profissional"
+                variant="standard"
+                required
+              />
+              <TextField
+                label="Área de conhecimento"
+                name="conhecimento"
+                variant="standard"
+                required
+              />
+              <TextField
+                label="Descrição"
+                name="descricao"
+                multiline
+                variant="outlined"
+              />
+            </FormControl>
+          </BoxColumn>
+        </BoxForm>
 
-        <Box>
-          <Button id={'submit'} type="submit">
+        <BoxButtom theme={smDown}>
+          <Button id={'submit'} type="submit" theme={smDown}>
             Submit
           </Button>
-          <Button id={'reset'} type="reset">
+          <Button id={'reset'} type="reset" theme={smDown}>
             Limpar
           </Button>
-        </Box>
+        </BoxButtom>
       </Form>
     </Layout>
   );

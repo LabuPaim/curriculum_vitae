@@ -5,7 +5,6 @@ export const Layout = styled.article`
     (props.style = {
       display: 'flex',
       justifyContent: 'center',
-      minWidth: '100vw',
     })}
 `;
 export const Form = styled.form`
@@ -13,42 +12,128 @@ export const Form = styled.form`
     (props.style = {
       display: 'flex',
       flexDirection: 'column',
+      marginTop: '30px',
       justifyContent: 'space-between',
       alignItems: 'center',
-      minWidth: '100%',
-      padding: '40px 0 30px 0',
-      minHeight: '100vh',
-      gap: 5,
+      width: '100%',
     })}
 `;
-
-export const avatar = {
-  width: 300,
-  height: 300,
-  background: '#0e2d2f',
-};
-
-export const Box = styled.div`
+export const BoxForm = styled.div`
   ${props =>
     (props.style = {
       display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      gap: 15,
+    })}
+
+  ${props =>
+    props.theme === true &&
+    (props.style = {
+      alignItems: 'flex-start',
+    })}
+`;
+
+export const BoxAvatar = styled(BoxForm)`
+  ${props =>
+    (props.style = {
+      alignItems: 'center',
+      width: '90%',
+    })}
+
+  ${props =>
+    props.theme !== true &&
+    (props.style = {
+      flexDirection: 'row',
+      alignItems: 'flex-end',
+      width: '50%',
+    })}
+
+  #avatar {
+    ${props =>
+      props.theme === true
+        ? (props.style = {
+            width: 150,
+            height: 150,
+            background: '#0e2d2f',
+          })
+        : (props.style = {
+            width: 300,
+            height: 300,
+            background: '#0e2d2f',
+          })}
+  }
+`;
+
+export const BoxColumn = styled(BoxForm)`
+  ${props =>
+    (props.style = {
+      width: '90%',
+    })}
+
+  ${props =>
+    props.theme !== true &&
+    (props.style = {
+      width: '50%',
+    })}
+
+  .formControlRow {
+    ${props =>
+      (props.style = {
+        flexDirection: 'row',
+        minWidth: '100%',
+        gap: '10%',
+      })}
+
+    ${props =>
+      props.theme === true &&
+      (props.style = {
+        flexDirection: 'column',
+        gap: 15,
+      })}
+
+      .controlRow {
+      ${props =>
+        (props.style = {
+          minWidth: '45%',
+        })}
+    }
+  } ;
+`;
+
+export const BoxButtom = styled(BoxForm)`
+  ${props =>
+    (props.style = {
       flexDirection: 'row',
       justifyContent: 'center',
-      alignItems: 'flex-end',
-      width: '40vw',
-      gap: 2,
+      width: '100%',
+      marginTop: '20px',
+      gap: 55,
+    })}
+
+  ${props =>
+    props.theme === true &&
+    (props.style = {
+      gap: 15,
     })}
 
   button {
     ${props =>
       (props.style = {
-        width: '30%',
+        width: '15%',
         padding: '15px 0 15px 0',
-        margin: 15,
         border: '2px solid #52c3cb',
         color: '#52c3cb',
         borderRadius: 8,
         background: '#31404C',
+      })}
+
+    ${props =>
+      props.theme === true &&
+      (props.style = {
+        width: '40%',
       })}
   }
   #submit:hover {
@@ -68,19 +153,6 @@ export const Box = styled.div`
       })}
   }
 `;
-export const BoxColumn = styled(Box)`
-  ${props =>
-    (props.style = {
-      flexDirection: 'column',
-    })}
-`;
-
-export const formControlRow = {
-  display: 'flex',
-  flexDirection: 'row',
-  width: '100%',
-  gap: 2,
-};
 
 export const formControlColumn = {
   display: 'flex',
