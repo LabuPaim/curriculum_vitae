@@ -14,6 +14,7 @@ export const Layout = styled.article`
       flexDirection: 'column',
       justifyContent: 'space-between',
       width: '90%',
+      height: '90%',
     })}
 `;
 export const Background80 = styled.div`
