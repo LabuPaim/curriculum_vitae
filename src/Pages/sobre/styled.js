@@ -13,8 +13,8 @@ export const Layout = styled.article`
     (props.style = {
       flexDirection: 'column',
       justifyContent: 'space-between',
-      width: '90%',
-      height: '90%',
+      width: '95%',
+      height: '95%',
     })}
 `;
 export const Background80 = styled.div`
