@@ -13,8 +13,6 @@ import {
 } from 'react-icons/ai';
 import {
   Layout,
-  backgroundStyle80,
-  backgroundStyle20,
   principal,
   imagem,
   sobre,
@@ -22,6 +20,8 @@ import {
   listIcon,
   typographyRow,
   boxSobreText,
+  Background80,
+  Background20,
 } from './styled';
 
 export const Sobre = () => {
@@ -45,7 +45,7 @@ export const Sobre = () => {
 
   return (
     <Layout>
-      <Box style={backgroundStyle80}>
+      <Background80>
         <Box style={principal}>
           <Box style={boxSobre}>
             <Box style={boxSobreText}>
@@ -69,9 +69,9 @@ export const Sobre = () => {
             image="./labuPaimSemFundo.png"
           />
         </Box>
-      </Box>
+      </Background80>
 
-      <Box style={backgroundStyle20}>
+      <Background20>
         <List style={listIcon}>
           {drawerOptions.map(options => (
             <ListItemButton
@@ -85,7 +85,7 @@ export const Sobre = () => {
             </ListItemButton>
           ))}
         </List>
-      </Box>
+      </Background20>
     </Layout>
   );
 };

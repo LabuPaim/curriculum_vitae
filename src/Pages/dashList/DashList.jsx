@@ -10,6 +10,13 @@ export const DashList = () => {
 
   const [stateCandidato, setStateCandidato] = useState([]);
   const [uniqueCandidato, setUniqueCandidato] = useState({});
+  const [isdelete, setIsdelete] = useState(false);
+
+  const updatePage = () => {
+    setTimeout(() => {
+      setIsdelete(!isdelete);
+    }, 1000);
+  };
 
   useEffect(() => {
     api
@@ -20,7 +27,7 @@ export const DashList = () => {
       .catch(err => {
         console.error('ops! ocorreu um erro' + err);
       });
-  }, []);
+  }, [isdelete]);
 
   return (
     <>
@@ -56,6 +63,7 @@ export const DashList = () => {
         open={isOpen}
         requestClose={handleOpen}
         props={uniqueCandidato}
+        updatePage={updatePage}
       />
     </>
   );

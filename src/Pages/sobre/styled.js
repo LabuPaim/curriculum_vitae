@@ -8,25 +8,22 @@ export const Layout = styled.article`
       position: 'relative',
       width: '100%',
       height: '100vh',
-      background: 'transparent',
     })}
 `;
-export const backgroundStyle80 = {
-  display: 'flex',
-  height: '100%',
-  width: '100%',
-};
-
-export const backgroundStyle20 = {
-  display: 'flex',
-  position: 'fixed',
-  justifyContent: 'flex-end',
-  alignItems: 'flex-end',
-  right: '0%',
-  height: '100%',
-  width: 300,
-  background: '#141414',
-};
+export const Background80 = styled.div``;
+export const Background20 = styled.div`
+  ${props =>
+    (props.style = {
+      display: 'flex',
+      position: 'fixed',
+      justifyContent: 'flex-end',
+      alignItems: 'flex-end',
+      right: 0,
+      height: '100%',
+      width: 300,
+      background: '#141414',
+    })}
+`;
 
 export const principal = {
   display: 'flex',

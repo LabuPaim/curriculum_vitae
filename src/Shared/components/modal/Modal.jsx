@@ -13,7 +13,7 @@ import {
 import { VscChromeClose } from 'react-icons/vsc';
 import api from '../../services/api';
 
-export const IsModal = ({ open, requestClose, props }) => {
+export const IsModal = ({ open, requestClose, props, updatePage }) => {
   const handleDelete = id => {
     api.delete(`${id}`);
   };
@@ -81,6 +81,7 @@ export const IsModal = ({ open, requestClose, props }) => {
             id="delete"
             onClick={() => {
               handleDelete(props._id);
+              updatePage();
               requestClose();
             }}
           >
