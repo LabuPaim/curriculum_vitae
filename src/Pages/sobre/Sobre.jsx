@@ -1,10 +1,11 @@
 import {
-  Box,
   CardMedia,
   List,
   ListItemButton,
   ListItemIcon,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import {
   AiFillGithub,
@@ -13,18 +14,16 @@ import {
 } from 'react-icons/ai';
 import {
   Layout,
-  principal,
-  imagem,
-  sobre,
-  boxSobre,
   listIcon,
-  typographyRow,
-  boxSobreText,
   Background80,
   Background20,
+  CardPrincipal,
+  BoxSobre,
 } from './styled';
 
 export const Sobre = () => {
+  const theme = useTheme();
+  const smDown = useMediaQuery(theme.breakpoints.down('lg'));
   const drawerOptions = [
     {
       name: 'github',
@@ -44,34 +43,32 @@ export const Sobre = () => {
   ];
 
   return (
-    <Layout>
-      <Background80>
-        <Box style={principal}>
-          <Box style={boxSobre}>
-            <Box style={boxSobreText}>
-              <Typography style={sobre}>Sobre</Typography>
-              <Typography style={typographyRow}>
-                Olá me chamo Victor Paim e fiz este projeto para o módulo 4 do
-                curso de <strong>FullStack da BlueEdTech</strong>. Um site de
-                ToDo List consumindo API própria feito com{' '}
-                <strong>NestJs, TypeScript,</strong> documentação com{' '}
-                <strong>Swagger</strong> e dependências no{' '}
-                <strong>MongoDB Atlas</strong>. Já no FrontEnd foi utilizado{' '}
-                <strong>
-                  Axios, ReactJs, Material Ui, Theme Context e CSS in JS.
-                </strong>
-              </Typography>
-            </Box>
-          </Box>
+    <Layout theme={smDown}>
+      <Background80 theme={smDown}>
+        <CardPrincipal theme={smDown}>
+          <BoxSobre theme={smDown}>
+            <Typography variant={'h1'} theme={smDown}>Sobre</Typography>
+            <Typography className={'sobre'} theme={smDown}>
+              Olá me chamo Victor Paim e fiz este projeto para o módulo 4 do
+              curso de <strong>FullStack da BlueEdTech</strong>. Um site de ToDo
+              List consumindo API própria feito com{' '}
+              <strong>NestJs, TypeScript,</strong> documentação com{' '}
+              <strong>Swagger</strong> e dependências no{' '}
+              <strong>MongoDB Atlas</strong>. Já no FrontEnd foi utilizado{' '}
+              <strong>
+                Axios, ReactJs, Material Ui, Theme Context e CSS in JS.
+              </strong>
+            </Typography>
+          </BoxSobre>
           <CardMedia
             component="img"
-            style={imagem}
+            className={'imagemLabu'}
             image="./labuPaimSemFundo.png"
           />
-        </Box>
+        </CardPrincipal>
       </Background80>
 
-      <Background20>
+      <Background20 theme={smDown}>
         <List style={listIcon}>
           {drawerOptions.map(options => (
             <ListItemButton

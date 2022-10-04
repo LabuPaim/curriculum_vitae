@@ -4,13 +4,27 @@ export const Layout = styled.article`
   ${props =>
     (props.style = {
       display: 'flex',
-      flexDirection: 'row',
       position: 'relative',
       width: '100%',
       height: '100vh',
     })}
+  ${props =>
+    props.theme === true &&
+    (props.style = {
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    })}
 `;
-export const Background80 = styled.div``;
+export const Background80 = styled.div`
+  ${props =>
+    (props.style = {
+      height: '100%',
+    })}/* ${props =>
+    props.theme === true &&
+    (props.style = {
+      minHeight: '100%',
+    })} */
+`;
 export const Background20 = styled.div`
   ${props =>
     (props.style = {
@@ -23,64 +37,100 @@ export const Background20 = styled.div`
       width: 300,
       background: '#141414',
     })}
+  ${props =>
+    props.theme === true &&
+    (props.style = {
+      position: 'relative',
+      justifyContent: 'center',
+      alignItems: 'center',
+      bottom: 0,
+      height: 100,
+      width: '100%',
+    })}
 `;
 
-export const principal = {
-  display: 'flex',
-  position: 'absolute',
-  flexDirection: 'row',
-  justifyContent: 'flex-end',
-  alignItems: 'center',
-  top: '12%',
-  right: '0%',
-  height: 600,
-  width: '100%',
-  zIndex: 100,
-};
+export const CardPrincipal = styled.div`
+  ${props =>
+    (props.style = {
+      display: 'flex',
+      position: 'absolute',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      top: '12%',
+      right: '0%',
+      width: '100%',
+    })}
 
-export const imagem = {
-  width: 680,
-  height: 'auto',
-  borderRadius: '0 0 180px 50px',
-  zIndex: 1000,
-};
+  ${props =>
+    props.theme === true &&
+    (props.style = {
+      position: 'relative',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-end',
+      top: 0,
+    })}
 
-export const boxSobre = {
-  display: 'flex',
-  position: 'absolute',
-  width: '100%',
-  height: 300,
-  opacity: 0.8,
-  gap: 30,
-  background: '#141414',
-  color: 'white',
-};
-export const boxSobreText = {
-  display: 'flex',
-  flexDirection: 'column',
-  width: '50%',
-  justifyContent: 'center',
-  alignContent: 'center',
-  alignItems: 'center',
-  opacity: 0.8,
-  gap: 30,
-  background: '#141414',
-  color: 'white',
-  // marginLeft: 100,
-};
+.imagemLabu {
+    ${props =>
+      (props.style = {
+        width: '40%',
+        height: 'auto',
+        borderRadius: '0 0 100px 50px',
+        zIndex: 1000,
+      })}
 
-export const sobre = {
-  width: '70%',
-  variant: 'h1',
-  component: 'div',
-  fontSize: 24,
-  fontWeight: 'bold',
-};
+    ${props =>
+      props.theme === true &&
+      (props.style = {
+        position: 'relative',
+        width: 300,
+        top: '80%',
+      })}
+  }
+`;
+export const BoxSobre = styled(CardPrincipal)`
+  ${props =>
+    (props.style = {
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+      padding: '0 0 0 5%',
+      opacity: 0.8,
+      gap: 30,
+      height: 400,
+      background: '#141414',
+      color: 'white',
+    })}
 
-export const typographyRow = {
-  textAlign: 'justify',
-  width: '70%',
-};
+  h1 {
+    ${props =>
+      (props.style = {
+        width: '70%',
+        component: 'div',
+        fontSize: 24,
+        fontWeight: 'bold',
+      })}
+    ${props =>
+      props.theme === true &&
+      (props.style = {
+        width: '95%',
+      })}
+  }
+
+  .sobre {
+    ${props =>
+      (props.style = {
+        textAlign: 'justify',
+        width: '50%',
+      })}
+    ${props =>
+      props.theme === true &&
+      (props.style = {
+        width: '95%',
+      })}
+  }
+`;
 
 export const listIcon = {
   display: 'flex',
