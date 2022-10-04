@@ -13,17 +13,14 @@ export const Layout = styled.article`
     (props.style = {
       flexDirection: 'column',
       justifyContent: 'space-between',
+      width: '90%',
     })}
 `;
 export const Background80 = styled.div`
   ${props =>
     (props.style = {
       height: '100%',
-    })}/* ${props =>
-    props.theme === true &&
-    (props.style = {
-      minHeight: '100%',
-    })} */
+    })}
 `;
 export const Background20 = styled.div`
   ${props =>
