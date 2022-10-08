@@ -12,8 +12,10 @@ import {
 } from './styled';
 import { VscChromeClose } from 'react-icons/vsc';
 import api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
 
 export const IsModal = ({ open, requestClose, props, updatePage }) => {
+  const navigate = useNavigate();
   const handleDelete = id => {
     api.delete(`${id}`);
   };
@@ -69,9 +71,10 @@ export const IsModal = ({ open, requestClose, props, updatePage }) => {
           <Buttom
             key="edite"
             id="edite"
-            // href={'/' + props._id}
+            href={'/' + props._id}
             onClick={() => {
               requestClose();
+              navigate('/create/' + props._id);
             }}
           >
             Editar

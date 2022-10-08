@@ -16,12 +16,16 @@ import {
   BoxAvatar,
 } from './styled';
 import api from '../../Shared/services/api';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 export const AddCurriculum = () => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('md'));
   const [userImage, setUserImage] = useState('');
+
+  const { id } = useParams();
+  console.log(id);
 
   function handleReset() {
     Array.from(document.querySelectorAll('input')).forEach(
@@ -64,6 +68,10 @@ export const AddCurriculum = () => {
       console.error('ops! ocorreu um erro' + error);
     }
   };
+
+  useEffect(() => {
+    // getProductById();
+  }, []);
 
   return (
     <Layout>
