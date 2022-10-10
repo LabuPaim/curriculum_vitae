@@ -11,14 +11,40 @@ import {
   BoxImage,
 } from './styled';
 import { VscChromeClose } from 'react-icons/vsc';
-import api from '../../services/api';
+import { api } from '../../services/api';
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert';
 
 export const IsModal = ({ open, requestClose, props, updatePage }) => {
   const navigate = useNavigate();
-  const handleDelete = id => {
-    api.delete(`${id}`);
-  };
+
+  async function handleDelete(propsID) {
+    swal({
+      title: 'Deletar Produto?',
+      text: 'Tem certeza que deseja deletar este produto?',
+      icon: 'warning',
+      dangerMode: true,
+      buttons: {
+        cancel: {
+          text: 'Cancelar',
+          value: null,
+          visible: true,
+          closeModal: true,
+          className: '',
+        },
+        confirm: {
+          text: 'Confirmar',
+          value: true,
+          visible: true,
+          closeModal: true,
+        },
+      },
+    }).then(async res => {
+      if (res) {
+        await api.deleteCurriculum(propsID);
+      }
+    });
+  }
 
   const isStack = props.stack;
 

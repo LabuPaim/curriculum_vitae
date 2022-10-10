@@ -2,7 +2,7 @@ import { Box, Button } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { Cards } from '../../Shared/components/card/Card';
 import { IsModal } from '../../Shared/components/modal/Modal';
-import api from '../../Shared/services/api';
+import { api } from '../../Shared/services/api';
 
 export const DashList = () => {
   const [isOpen, setOpen] = useState(false);
@@ -12,6 +12,11 @@ export const DashList = () => {
   const [uniqueCandidato, setUniqueCandidato] = useState({});
   const [isdelete, setIsdelete] = useState(false);
 
+  async function getAll() {
+    const allCurriculum = await api.getAll();
+    setStateCandidato(allCurriculum ?? []);
+  }
+
   const updatePage = () => {
     setTimeout(() => {
       setIsdelete(!isdelete);
@@ -19,14 +24,7 @@ export const DashList = () => {
   };
 
   useEffect(() => {
-    api
-      .get()
-      .then(response => {
-        setStateCandidato(response.data);
-      })
-      .catch(err => {
-        console.error('ops! ocorreu um erro' + err);
-      });
+    getAll();
   }, [isdelete]);
 
   return (

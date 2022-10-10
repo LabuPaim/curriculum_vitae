@@ -15,7 +15,7 @@ import {
   BoxButtom,
   BoxAvatar,
 } from './styled';
-import api from '../../Shared/services/api';
+import { api } from '../../Shared/services/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -23,15 +23,23 @@ export const AddCurriculum = () => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('md'));
   const [userImage, setUserImage] = useState('');
+  const [curriculum, setCurriculum] = useState({});
+  console.log('Curriculum ', curriculum);
 
   const { id } = useParams();
-  console.log(id);
+  
 
   function handleReset() {
     Array.from(document.querySelectorAll('input')).forEach(
       input => (input.value = ''),
     );
   }
+
+  async function getById() {
+    const curriculo = await api.getById(id);
+    setCurriculum(curriculo);
+  }
+  
 
   const handleSubmit = async e => {
     try {
@@ -52,15 +60,16 @@ export const AddCurriculum = () => {
         descricao: formList[7].value,
       };
 
-      setTimeout(() => {
-        api
-          .post('/', response)
-          .then(() => {
-            console.log('Criado com Sucesso');
-          })
-          .catch(err => {
-            console.error('ops! ocorreu um erro' + err);
-          });
+      setTimeout(async() => {
+        let CurriculumResponse;
+        if (id) {
+          const curriculumUpdate = { ...response, id: id };
+          CurriculumResponse = await api.update(curriculumUpdate);
+          console.log('CurriculumResponse dentro', CurriculumResponse);
+        } else {
+          CurriculumResponse = await api.createCurriculum(response);
+          console.log('CurriculumResponse fora', CurriculumResponse);
+        }
       }, 1500);
 
       handleReset();
@@ -70,7 +79,8 @@ export const AddCurriculum = () => {
   };
 
   useEffect(() => {
-    // getProductById();
+    getById();
+    
   }, []);
 
   return (
@@ -82,6 +92,7 @@ export const AddCurriculum = () => {
             <FormControl fullWidth>
               <TextField
                 theme={smDown}
+                defaultValue={curriculum.foto}
                 label="Link da Foto"
                 name="foto"
                 variant="standard"
@@ -100,6 +111,7 @@ export const AddCurriculum = () => {
                 label="Nome"
                 name="name"
                 variant="standard"
+                defaultValue={curriculum?.nome}
                 required
               />
               <TextField
@@ -107,6 +119,7 @@ export const AddCurriculum = () => {
                 label="Idade"
                 name="idade"
                 variant="standard"
+                defaultValue={curriculum?.idade}
                 required
               />
             </FormControl>
