@@ -100,7 +100,7 @@ export const IsModal = ({ open, requestClose, props, updatePage }) => {
             href={'/' + props._id}
             onClick={() => {
               requestClose();
-              navigate('/create/' + props._id);
+              navigate('/update/' + props._id);
             }}
           >
             Editar

@@ -65,7 +65,7 @@ export const api = {
   update: async curriculum => {
     try {
       const updatedCurriculum = await axios.patch(
-        '/' + curriculum._id,
+        '/' + curriculum.id,
         curriculum,
       );
       return updatedCurriculum.data;

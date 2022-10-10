@@ -7,7 +7,7 @@ export const AppRoutes = () => {
       <Route path="/" element={<DashList />} />
       <Route path="/create" element={<AddCurriculum />} />
       <Route path="/sobre" element={<Sobre />} />
-      <Route path="/create/:id" element={<AddCurriculum />} />
+      <Route path="/update/:id" element={<AddCurriculum />} />
     </Routes>
   );
 };
